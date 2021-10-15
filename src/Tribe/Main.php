@@ -217,7 +217,11 @@ class Tribe__Main {
 				[ 'tec-variables-full', 'variables-full.css', ],
 				[ 'tribe-common-full-style', 'common-full.css', [ 'tec-variables-full', 'tribe-common-skeleton-style' ] ],
 			],
-			null
+			'admin_enqueue_scripts',
+			[
+				'conditionals' => [ $this, 'should_load_common_admin_css' ],
+				'priority' => 5,
+			]
 		);
 
 		// These ones will be enqueued on `admin_enqueue_scripts` if the conditional method on filter is met
